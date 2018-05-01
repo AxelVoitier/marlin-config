@@ -22,8 +22,6 @@
 
 # @section temperature
 /#define TEMP_SENSOR_0/ c #define TEMP_SENSOR_0 5
-# /#define TEMP_SENSOR_BED/ c #define TEMP_SENSOR_BED 5
-# /#define PIDTEMPBED/ c #define PIDTEMPBED
 
 
 # @section machine
@@ -32,26 +30,17 @@
 /#define DELTA_AUTO_CALIBRATION/ c #define DELTA_AUTO_CALIBRATION
 /#define DELTA_CALIBRATION_RADIUS/ c #define DELTA_CALIBRATION_RADIUS 65.0 // mm
 /#define DELTA_PRINTABLE_RADIUS/ c #define DELTA_PRINTABLE_RADIUS 100.0 // mm
-/#define DELTA_DIAGONAL_ROD/ c #define DELTA_DIAGONAL_ROD 228.0 // mm
+/#define DELTA_DIAGONAL_ROD / c #define DELTA_DIAGONAL_ROD 228.0 // mm
 /#define DELTA_HEIGHT/ c #define DELTA_HEIGHT 238.00 // get this value from auto calibrate
 
-/#define DELTA_RADIUS/ i #define DELTA_SMOOTH_ROD_OFFSET 149// mm; Horizontal offset from middle of printer to smooth rod center.\
+/#define DELTA_RADIUS / i #define DELTA_SMOOTH_ROD_OFFSET 149// mm; Horizontal offset from middle of printer to smooth rod center.\
 #define DELTA_EFFECTOR_OFFSET 20.4 // mm; // Horizontal offset of the universal joints on the end effector.\
 #define DELTA_CARRIAGE_OFFSET 20 // mm; // Horizontal offset of the universal joints on the carriages.
-/#define DELTA_RADIUS/ c #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
-
-
-# @section homing
-/#define ENDSTOP_INTERRUPTS_FEATURE/ c #define ENDSTOP_INTERRUPTS_FEATURE
+/#define DELTA_RADIUS / c #define DELTA_RADIUS (DELTA_SMOOTH_ROD_OFFSET-DELTA_EFFECTOR_OFFSET-DELTA_CARRIAGE_OFFSET)
 
 
 # @section motion
-/#define DEFAULT_AXIS_STEPS_PER_UNIT/ i #define XYZ_FULL_STEPS_PER_ROTATION 200\
-#define XYZ_MICROSTEPS 16\
-#define XYZ_BELT_PITCH 2\
-#define XYZ_PULLEY_TEETH 20\
-#define XYZ_STEPS (XYZ_FULL_STEPS_PER_ROTATION * XYZ_MICROSTEPS / double(XYZ_BELT_PITCH) / double(XYZ_PULLEY_TEETH))
-/#define DEFAULT_AXIS_STEPS_PER_UNIT/ c #define DEFAULT_AXIS_STEPS_PER_UNIT   { XYZ_STEPS, XYZ_STEPS, XYZ_STEPS, 110.0 }
+/#define DEFAULT_AXIS_STEPS_PER_UNIT/ c #define DEFAULT_AXIS_STEPS_PER_UNIT   { DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, DEFAULT_XYZ_STEPS_PER_UNIT, 110.0 }
 
 /#define DEFAULT_MAX_FEEDRATE/ c #define DEFAULT_MAX_FEEDRATE          { 200, 200, 200, 200 }
 /#define DEFAULT_MAX_ACCELERATION/ c #define DEFAULT_MAX_ACCELERATION      { 1000, 1000, 1000, 3000 }
@@ -63,10 +52,10 @@
 
 
 # @section probes
-# /#define PROBE_MANUALLY/ c #define PROBE_MANUALLY
+# /#define PROBE_MANUALLY$/ c #define PROBE_MANUALLY
 /#define FIX_MOUNTED_PROBE/ c #define FIX_MOUNTED_PROBE
-/#define X_PROBE_OFFSET_FROM_EXTRUDER/ c #define X_PROBE_OFFSET_FROM_EXTRUDER 0     // X offset: -left  +right  [of the nozzle]
-/#define Y_PROBE_OFFSET_FROM_EXTRUDER/ c #define Y_PROBE_OFFSET_FROM_EXTRUDER +35   // Y offset: -front +behind [the nozzle]
+/^#define X_PROBE_OFFSET_FROM_EXTRUDER/ c #define X_PROBE_OFFSET_FROM_EXTRUDER 0     // X offset: -left  +right  [of the nozzle]
+/^#define Y_PROBE_OFFSET_FROM_EXTRUDER/ c #define Y_PROBE_OFFSET_FROM_EXTRUDER +35   // Y offset: -front +behind [the nozzle]
 /#define Z_PROBE_OFFSET_FROM_EXTRUDER/ c #define Z_PROBE_OFFSET_FROM_EXTRUDER 0     // Z offset: -below +above  [the nozzle]
 
 
