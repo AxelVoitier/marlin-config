@@ -50,6 +50,8 @@
 /#define DEFAULT_XJERK/ c #define DEFAULT_XJERK                 20.0
 /#define DEFAULT_EJERK/ c #define DEFAULT_EJERK                 20.0
 
+/#define S_CURVE_ACCELERATION/ c #define S_CURVE_ACCELERATION
+
 
 # @section probes
 # /#define PROBE_MANUALLY$/ c #define PROBE_MANUALLY
